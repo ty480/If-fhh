@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สุขสันต์วันเกิดพี่สาว! 💖</title>
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            margin: 0;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            position: relative;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap');
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            padding: 40px;
+            max-width: 700px;
+            margin: 30px auto;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            color: #333;
+            position: relative;
+            z-index: 1;
+            transform: scale(0.95);
+            animation: popIn 0.8s ease-out forwards;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        h1 {
+            font-family: 'Sarabun', sans-serif;
+            font-size: 3.5em;
+            color: #e91e63;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+            margin-bottom: 25px;
+            animation: slideInLeft 1s ease-out forwards;
+        }
+
+        p {
+            font-size: 1.3em;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            color: #555;
+            animation: fadeInText 1.5s ease-out forwards;
+            opacity: 0;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        p:nth-of-type(1) { animation-delay: 0.5s; }
+        p:nth-of-type(2) { animation-delay: 1.0s; }
+        p:nth-of-type(3) { animation-delay: 1.5s; }
+
+
+        .heart-icon {
+            color: #e91e63;
+            font-size: 2.5em;
+            margin: 0 5px;
+            animation: pulse 1s infinite alternate;
+        }
+
+        img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 20px;
+            margin-top: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            border: 7px solid #ff7e5f;
+            animation: fadeInImg 2s ease-out forwards;
+            opacity: 0;
+            animation-delay: 2s;
+        }
+
+        .signature {
+            font-family: 'Sarabun', sans-serif;
+            font-size: 1.6em;
+            color: #e91e63;
+            margin-top: 40px;
+            font-weight: bold;
+            animation: slideInRight 1.5s ease-out forwards;
+            opacity: 0;
+            animation-delay: 2.5s;
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+
+        @keyframes slideInLeft {
+            0% { transform: translateX(-100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes fadeInText {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fadeInImg {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes slideInRight {
+            0% { transform: translateX(100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Floating hearts background */
+        .floating-heart {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 30px;
+            animation: float 10s infinite ease-in-out;
+            pointer-events: none;
+            opacity: 0; /* Initially hidden */
+        }
+        .floating-heart:nth-child(even) { animation-duration: 12s; font-size: 40px; color: rgba(255, 200, 220, 0.3); }
+        .floating-heart:nth-child(3n) { animation-duration: 8s; font-size: 25px; color: rgba(255, 180, 200, 0.2); }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) translateX(0px); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(-10vh) translateX(var(--x-offset)); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>สุขสันต์วันเกิดนะ พี่สาวคนสวย! <span class="heart-icon">💖</span></h1>
+        <p>
+            ในวันพิเศษนี้ น้องขออวยพรให้พี่สาวที่น่ารักที่สุดในโลก
+            มีแต่ความสุขกาย สุขใจ คิดหวังสิ่งใดก็ขอให้สมปรารถนาทุกประการ
+            ขอให้มีรอยยิ้มที่สดใสในทุกๆ วัน และเต็มไปด้วยพลังงานที่ดีเสมอนะ!
+        </p>
+        <p>
+            ขอบคุณสำหรับทุกๆ อย่างที่พี่สาวทำให้น้องเสมอมา
+            ไม่ว่าจะเป็นคำแนะนำ กำลังใจ หรือแม้แต่แค่การรับฟัง
+            น้องรู้ว่าพี่สาวเหนื่อยมามากแล้ว ขอบคุณที่พยายามอย่างหนักเพื่อพวกเรานะ
+            น้องภูมิใจในตัวพี่สาวที่สุดเลย! <span class="heart-icon">🌟</span>
+        </p>
+        <p>
+            ขอให้ปีนี้เป็นอีกหนึ่งปีที่เต็มไปด้วยความสำเร็จ ความรัก
+            และช่วงเวลาดีๆ ที่จะอยู่ในความทรงจำตลอดไป
+            รักพี่สาวมากๆ นะครับ/คะ! <span class="heart-icon">💝</span>
+        </p>
+        <img src="YOUR_IMAGE_URL_HERE" alt="รูปพี่สาวคนสวย">
+        <div class="signature">
+            จากน้องรักที่อยู่เคียงข้างเสมอ <span class="heart-icon">🥰</span>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for creating floating hearts background
+        function createFloatingHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('floating-heart');
+            heart.innerHTML = '💖';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 10 + 5 + 's'; // 5 to 15 seconds
+            heart.style.animationDelay = Math.random() * 5 + 's';
+            heart.style.setProperty('--x-offset', (Math.random() - 0.5) * 200 + 'px'); // Random horizontal drift
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, parseFloat(heart.style.animationDuration) * 1000);
+        }
+
+        // Create multiple hearts
+        for (let i = 0; i < 20; i++) {
+            createFloatingHeart();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ซองจดหมายพิเศษ 💖</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            overflow: hidden;
+            font-family: 'Sarabun', sans-serif; /* เพิ่ม font ภาษาไทย */
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap');
+
+        .envelope-wrapper {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .envelope {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #f7cac9;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.8s ease-in-out;
+            transform-style: preserve-3d;
+            animation: bounce 2s infinite alternate;
+        }
+
+        .envelope-front {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #f7cac9;
+            border-radius: 10px;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            border: 2px dashed #ff85a2;
+        }
+
+        .envelope-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #f7cac9;
+            border-radius: 10px;
+            backface-visibility: hidden;
+            transform: rotateY(180deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #d14777;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .envelope-text {
+            color: #d14777;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .envelope-subtext {
+            color: #e96d8e;
+            font-size: 0.9em;
+        }
+
+        .heart-stamp {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2.5em;
+            color: #ff3366;
+            animation: beat 1s infinite alternate;
+        }
+
+        .click-hint {
+            position: absolute;
+            bottom: -40px;
+            color: white;
+            font-size: 0.9em;
+            animation: fadeInOut 2s infinite;
+        }
+
+        .envelope.open {
+            transform: rotateX(15deg) translateZ(50px) translateY(-50px);
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+
+        @keyframes beat {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        /* Confetti Effect */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ffeb3b; /* yellow */
+            border-radius: 50%;
+            opacity: 0;
+            animation: confetti-fall 3s ease-out forwards;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        .confetti:nth-child(even) { background-color: #e91e63; /* pink */ }
+        .confetti:nth-child(3n) { background-color: #03a9f4; /* blue */ }
+        .confetti:nth-child(4n) { background-color: #4caf50; /* green */ }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translate(var(--x, 0), var(--y, 0)) rotateZ(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--x, 0), 100vh) rotateZ(720deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="envelope-wrapper" id="envelopeWrapper">
+        <div class="envelope" id="envelope">
+            <div class="envelope-front">
+                <span class="heart-stamp">💖</span>
+                <div class="envelope-text">ถึงพี่สาวคนพิเศษ</div>
+                <div class="envelope-subtext">มีข้อความสำหรับคุณ!</div>
+            </div>
+            <div class="envelope-back"></div>
+        </div>
+        <div class="click-hint">คลิกที่ซองจดหมายเพื่อเปิด!</div>
+    </div>
+
+    <script>
+        document.getElementById('envelopeWrapper').addEventListener('click', function() {
+            const envelope = document.getElementById('envelope');
+            envelope.classList.add('open');
+
+            // Play a little animation before redirecting
+            setTimeout(() => {
+                // Confetti burst!
+                for (let i = 0; i < 50; i++) {
+                    createConfetti(envelope);
+                }
+            }, 500); // After envelope starts opening
+
+            setTimeout(() => {
+                window.location.href = 'hbd_message.html'; // ไปยังหน้าที่ 2
+            }, 1500); // 1.5 วินาทีหลังจากคลิก
+        });
+
+        function createConfetti(triggerElement) {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+
+            const rect = triggerElement.getBoundingClientRect();
+            const startX = rect.left + rect.width / 2 + (Math.random() - 0.5) * rect.width;
+            const startY = rect.top + rect.height / 2 + (Math.random() - 0.5) * rect.height;
+
+            confetti.style.left = startX + 'px';
+            confetti.style.top = startY + 'px';
+
+            const offsetX = (Math.random() - 0.5) * 400; // Spread horizontally
+            const offsetY = (Math.random() - 0.5) * 400; // Spread vertically
+
+            confetti.style.setProperty('--x', offsetX + 'px');
+            confetti.style.setProperty('--y', offsetY + 'px');
+
+            document.body.appendChild(confetti);
+
+            setTimeout(() => {
+                confetti.remove();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
